@@ -61,6 +61,13 @@ the-tutor 读写学习库时，**首选 Obsidian MCP**（etag 版本守卫、bac
    （这是 SKILL.md §1 原则 16 的范围对齐不变量，别破）。实现形态是 sub-agent 判定者，不是升 preset。
 2. **间隔复习 / 到期队列**（v2）：依赖"状态可被脚本查询"，先把状态落稳再谈。
 
+## 怎么安装 / 使用
+
+- **迭代技能**：cwd = `~/Projects/the-tutor`（本仓库是项目根，含 `.git`），`.agents/skills/the-tutor/` 自动被发现（rank 200）。
+- **在某个学习库用**：建一条项目级软链 `<学习库>/.agents/skills/the-tutor` → `~/Projects/the-tutor/.agents/skills/the-tutor`；
+  或用户级软链 `~/.agents/skills/the-tutor` → 同上（任何 cwd 可用，rank 500）。
+- 目录软链 DSH 加载器支持（`isSymbolicLink()` 后 `stat` 跟随）。软链不随同步工具同步，换设备要重建。
+
 ## 提交纪律
 
 - 提交只暂存本次改动：`git add <具体路径>`，不要 `git add -A`。
